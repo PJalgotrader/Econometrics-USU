@@ -371,7 +371,10 @@ my_list[[3]]
 my_list[[3]][1,2]
 
 
-
+## exploring the vtable package
+install.packages("vtable")
+library(vtable)
+vtable::
 
 
 
