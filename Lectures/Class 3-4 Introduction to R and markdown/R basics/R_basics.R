@@ -235,6 +235,7 @@ new_df <- data.frame(names=c("PJ", "TJ", "CJ", "MJ"), GPA=c(2,3.8,3.5, 4))
 new_df
 
 
+
 # useful functions in dplyr
 ?mutate()
 ?filter()
@@ -372,7 +373,7 @@ my_list[[3]][1,2]
 
 
 ## exploring the vtable package
-install.packages("vtable")
+# install.packages("vtable")
 library(vtable)
 #vtable::
 
