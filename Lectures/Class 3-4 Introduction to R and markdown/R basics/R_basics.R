@@ -374,7 +374,8 @@ my_list[[3]][1,2]
 ## exploring the vtable package
 install.packages("vtable")
 library(vtable)
-vtable::
+#vtable::
 
+# built-in interactive Rstudio tutorial :https://www.rstudio.com/blog/rstudio-1-3-integrated-tutorials/  
 
 
