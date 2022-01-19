@@ -1,10 +1,10 @@
-# Pedram Jahangiry 
+# Prof. Pedram Jahangiry
 
-# this is a quick review for the R programming 
+# this is a quick review for the R programming
 
-## data types in R 
+## data types in R
 
-# print ? before any function you want to know more about. 
+# print ? before any function you want to know more about.
 
 #---------------------------------------------------------------------------------------
 # 1- integer  (if you don't put "L" then it will be double by default)
@@ -19,7 +19,7 @@ is.double(y)
 
 #---------------------------------------------------------------------------------------
 # 3- character
-a <- "hello" 
+a <- "hello"
 typeof(a)
 
 
@@ -32,7 +32,7 @@ x2 <- F # F or False
 
 ## logicals
 # > < == != !(not) /(or) &  isTrue(x)
-x<- 4!=5 
+x<- 4!=5
 isTRUE(x)
 y<- !(4<5)
 y
@@ -54,7 +54,7 @@ seq(1,9, along.with =x ) # make 1:10 into number of x pieces
 rep(1,3)
 rep("pedram",2)
 rep(c(1,0),times=5)
-rep(c(1,0),each=5)  
+rep(c(1,0),each=5)
 
 
 # brackets[]
@@ -98,7 +98,7 @@ colnames(A)<- NULL # clearing names
 # some R-specific functions: rbind() , cbind(), rownames(), colnames()
 
 
-# operations in matrix: 
+# operations in matrix:
 # / * + - are element by element
 # %*% is matrix multiplication
 A/B
@@ -123,13 +123,13 @@ factor_apple <- factor(apple_colors, levels = c("red",'yellow','green') , ordere
 factor_apple
 nlevels(factor_apple)
 
-as.numeric(factor_apple) 
+as.numeric(factor_apple)
 
 
 #---------------------------------------------------------------------------------------
 # 8- Data frames
 
-my_dataframe <- data.frame( student_name=c("PJ", "TJ", "MJ"), 
+my_dataframe <- data.frame( student_name=c("PJ", "TJ", "MJ"),
                             gender= c("Male", "Male", "female"),
                             GPA=c(3.9,4,3.8))
 my_dataframe
@@ -168,7 +168,7 @@ cnt <- 1
 repeat {
   print(v)
   cnt <- cnt+1
-  
+
   if(cnt > 5) {
     break
   }
@@ -190,7 +190,7 @@ x
 
 if(x>1){
   answer<- "greater than 1"
-} else if(x>= -1) { 
+} else if(x>= -1) {
   answer <- "btw -1 and 1"
 } else{
   answer <- "less than -1"
@@ -214,13 +214,13 @@ my_add_function_plus3(1,1,1)
 
 data()
 
-#example 
+#example
 df <- mtcars
 str(df)
 table(df$cyl)
 
 
-# instaling packages 
+# instaling packages
 # install.packages(c("wooldridge", "dplyr")) # run this line only once
 library(wooldridge)
 data()
@@ -235,7 +235,7 @@ new_df <- data.frame(names=c("PJ", "TJ", "CJ", "MJ"), GPA=c(2,3.8,3.5, 4))
 new_df
 
 
-# useful functions in dplyr 
+# useful functions in dplyr
 ?mutate()
 ?filter()
 ?select()
@@ -275,9 +275,9 @@ select(new_df, c(is_pass,names))
 # So what is the power of select?
 names(wage2)
 select(wage2, contains("educ"))
-head(select(wage2, starts_with("E"))) # what if I put a negative sign before start_with ? 
+head(select(wage2, starts_with("E"))) # what if I put a negative sign before start_with ?
 head(select(wage2, ends_with("c")))
-# you want even more power in terms of selecting columns? google grep() function Rdocumentation! 
+# you want even more power in terms of selecting columns? google grep() function Rdocumentation!
 
 
 
@@ -293,7 +293,7 @@ new_df %>% filter(GPA>3 & height>=170) %>% arrange(desc(height)) %>% select(name
 
 
 
-# working with wooldridge data 
+# working with wooldridge data
 # example : wage2
 
 df<- wage2
@@ -342,7 +342,7 @@ str(df)
 
 
 
-# some basic plots 
+# some basic plots
 df<- wage2
 
 # histogram
