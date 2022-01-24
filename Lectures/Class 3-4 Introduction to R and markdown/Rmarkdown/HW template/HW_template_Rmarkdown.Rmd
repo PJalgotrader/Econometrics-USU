@@ -7,10 +7,7 @@ output:
   word_document: default
 ---
 
-\tableofcontents
 
-
-\newpage
 
 # Problems
 
