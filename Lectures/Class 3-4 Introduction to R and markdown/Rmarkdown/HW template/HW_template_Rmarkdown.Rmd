@@ -3,11 +3,10 @@ title: "HW_template_Rmarkdown"
 author: "Pedram Jahangiry"
 date: ""
 output:
-  pdf_document: default
   word_document: default
 ---
 
-
+\newpage
 
 # Problems
 
@@ -47,7 +46,7 @@ This is my answer to section (i)
 # Including r output within some text 
 
 for example I calculated the average number of cars as: 
-```{r}
+```{r, comment=NA}
 avg_speed <- mean(cars$speed)
 avg_speed
 ```
@@ -74,8 +73,8 @@ How to write mathematical formulas in **Rmarkdown**:
 1. Writing in-line formulas using one dollar sign: $y=\beta_0 + \beta_1 x_1 + ... + \beta_k x_k + u$
 
 
-2. Writing centered and stand alone formulas using 2 dollar signs: 
-$$y=\beta_0 + \beta_1 x_1 + ... + \beta_k x_k + u$$
+2. Writing centered and stand alone formulas using 2 dollar signs:  $$y=\beta_0 + \beta_1 x_1 + ... + \beta_k x_k + u$$
+
 $$P(X|Y)$$
 
 $log(salary)$
@@ -85,6 +84,7 @@ $P(X \le 6)$
 $f(x)=3x^2 -2x^3$  then $0 \le x \le 1$
 
 ---------------
+
 
 
 

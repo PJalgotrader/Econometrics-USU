@@ -1,0 +1,61 @@
+---
+title: "HW2_draft"
+author: "Pedram Jahangiry, G1"
+date: ""
+output: word_document
+---
+\newpage
+
+
+# Problems
+
+# Computer exercises
+
+```{r include=FALSE}
+library(wooldridge)
+library(stargazer)
+library(dplyr)
+library(lmtest)
+```
+
+
+
+## Question 1 
+
+Replicate the following vector of numbers using **seq()** function and call it **v1.**
+
+
+```{r, comment=NA}
+
+v1 <- seq(1,17,4)
+v1
+
+```
+
+----
+
+## Question 2 
+
+### part I
+
+Replicate the following matrix in R and call it A.
+
+```{r, comment=NA}
+
+A<- matrix(20:39, ncol = 5, nrow = 4, byrow = TRUE)
+
+A
+
+```
+
+
+
+```{r, comment=NA}
+
+```
+
+
+
+
+
+
