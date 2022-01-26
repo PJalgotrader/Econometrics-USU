@@ -1,4 +1,5 @@
 #Prof. Pedram Jahangiry
+
 # x and y are mean independent and cor = 0. But they are not strongly independent. 
 
 y = c(20, 25, 30,30,20)
@@ -13,7 +14,7 @@ reg <- lm(y~x)
 abline(reg, col='blue')
 
 
-# x and y are NOT mean independent and cor = 0. But they are not strongly independent. 
+# x and y are NOT mean independent and cor = 0. They are not strongly independent either. 
 
 
 y = c (20, 30,20,30, 30, 40, 40, 50, 10, 20)
@@ -61,3 +62,10 @@ ggplot(data,aes(x, y)) +
 
 
 #----------------------------------------------------------------
+
+# I hope now you realize:
+# 1- Conditional expectation captures the nonlinear/linear relationship between X and Y.
+# 2- Correlation captures the linear relationship between X and Y
+
+
+# I love econometrics! 
