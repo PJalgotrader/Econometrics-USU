@@ -33,7 +33,8 @@ summary(ceosal1$salary)
 # correlation with ROE:
 cor(ceosal1$salary, ceosal1$roe)
 
-
+#quantile
+quantile(ceosal1$salary, 0.5)
 
 ####################################################################
 
@@ -57,8 +58,10 @@ pbinom(2,2,0.5) # probability of observing at most 2 tails (CDF)
 n <- 100 # n= number of draws
 rv <- seq(0,n)  #  x= number of tails observed
 fx<- dbinom(rv,n,0.5) # PDF
-Fx<- pbinom(rv,n,0.5) # CDF
+plot(fx)
 
+Fx<- pbinom(rv,n,0.5) # CDF
+plot(Fx)
 
 
 # CDF for continuous random variable
