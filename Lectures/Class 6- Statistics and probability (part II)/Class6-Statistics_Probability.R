@@ -21,21 +21,27 @@ help(ceosal1)
 
 head(ceosal1)
 
+X <- ceosal1$salary
+
 # sample average:
-mean(ceosal1$salary, na.rm = TRUE)
+mean(X, na.rm = TRUE)
+
+
 # sample median:
-median(ceosal1$salary, na.rm = TRUE)
+median(X, na.rm = TRUE)
+
 #standard deviation:
-sd(ceosal1$salary, na.rm = TRUE)
+sd(X, na.rm = TRUE)
+
 # summary information:
-summary(ceosal1$salary)
+summary(X)
 
 # correlation with ROE:
-cor(ceosal1$salary, ceosal1$roe)
+cor(X, ceosal1$roe)
 
 #quantile
-quantile(ceosal1$salary, 0.5)
-
+quantile(X, 0.5)
+quantile(X, 1/4)
 ####################################################################
 
 ## Statistical distributions
@@ -55,20 +61,23 @@ dbinom(0,2,0.5) # probability of observing 0 tails (PDF)
 pbinom(2,2,0.5) # probability of observing at most 2 tails (CDF)
 
 # you can give a whole vector to dbinom. 
-n <- 100 # n= number of draws
+n  <- 2 # n= number of draws
 rv <- seq(0,n)  #  x= number of tails observed
-fx<- dbinom(rv,n,0.5) # PDF
+fx <- dbinom(rv,n,0.5) # PDF
 plot(fx)
 
 Fx<- pbinom(rv,n,0.5) # CDF
 plot(Fx)
 
 
+
+# Now let's look at some continuous random variables. 
+
 # CDF for continuous random variable
 pnorm(0)
 pnorm(1)
 pnorm(1000000)
-
+pnorm(-2)
 
 
 # finding P(|X|<2) when X is normally distributed. 
@@ -92,7 +101,7 @@ f_normal <- function(x,mu=0,sigma=1) { (1/(sigma*sqrt(2*pi)) * exp(-0.5*((x-mu)/
 f_normal(0)
 
 curve(dnorm,-5,5)
-integrate(dnorm,-Inf,Inf)
+integrate(dnorm,-Inf,0)
 
-pnorm(6)
+pnorm(0)
 
