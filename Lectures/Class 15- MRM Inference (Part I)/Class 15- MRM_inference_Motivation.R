@@ -8,7 +8,7 @@ library(stargazer)
 
 MRM1 <- lm(wage ~ educ+ exper + IQ + sibs , wage2)
 stargazer(MRM1, type = "text")
-
+summary(MRM1)
 
 
 # let's test if education is relevant i.e H0: b_educ = 0 vs H1: b_educ != 0 
@@ -25,6 +25,9 @@ t_educ
 # let's find the critical value
 
 c <- qt(0.995,930)
+c
+
+c <- qt(0.05, 930)
 c
 
 # what is your conclusion: because t > c then we reject the null at 5% significane level
