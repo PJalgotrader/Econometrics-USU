@@ -48,7 +48,7 @@ H0 <- c("years","gamesyr","bavg=0","hrunsyr=0","rbisyr=0")
 linearHypothesis(reg_UR, H0)
 
 # extracting F
-summary(reg_UR)$fstatistic
+summary(reg_UR)
 
 
 
@@ -72,6 +72,7 @@ vif(reg_UR)
 
 H0 <- c("log(lotsize)=0","log(sqrft)=0","bdrms=0")
 linearHypothesis(reg_UR, H0)
+
 
 
 
