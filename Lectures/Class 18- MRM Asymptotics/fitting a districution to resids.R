@@ -2,6 +2,7 @@ library(wooldridge)
 library(stargazer)
 library(dplyr)
 
+#install.packages("MASS")
 library(MASS)
 
 MRM_1 <- lm(wage ~ educ + exper + tenure, wage1)
