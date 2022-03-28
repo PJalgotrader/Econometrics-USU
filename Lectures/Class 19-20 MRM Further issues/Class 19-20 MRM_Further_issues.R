@@ -18,6 +18,25 @@ reg_scaled_x <- lm(wage~educ+I(age/10),wage2)
 stargazer(reg_orig, reg_scaled_y, reg_scaled_x, type="text",  column.labels = c("Original", "Scaled Y", "Scaled X"))
 
 
+# let's do log version, pay attention that (only) the coefficients of 
+# log variables are invariant to re-scaling 
+
+reg_log <- lm(log(wage)~ log(educ)+age, wage2)
+stargazer(reg_log, type = "text")
+
+reg_rescale_y <- lm(log(wage/1000) ~ log(educ) + age, wage2)
+stargazer(reg_log, reg_rescale_y, type = "text")
+
+
+reg_rescale_X1 <- lm(log(wage) ~ log(educ/10) + age, wage2)
+stargazer(reg_log, reg_rescale_X1, type = "text")
+
+
+reg_rescale_X2 <- lm(log(wage) ~ log(educ) + I(age/10), wage2)
+stargazer(reg_log, reg_rescale_X2, type = "text")
+
+
+
 #--------------------
 # Using quadratic functional form
 
