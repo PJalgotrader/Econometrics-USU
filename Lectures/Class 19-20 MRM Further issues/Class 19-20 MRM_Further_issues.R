@@ -46,15 +46,18 @@ stargazer(MRM, type = "text")
 
 
 # effect plot 
-# install.packages("effects")
+#install.packages("effects")
 library(effects)
 plot(effect("exper", MRM))
+
 
 #------------------------------------------------------------------------------
 
 
 MRM <- lm(log(price)~log(nox)+log(dist)+rooms+I(rooms^2)+stratio,data=hprice2)
 stargazer(MRM, type = "text")
+
+
 
 # effect plot 
 plot(effect("rooms", MRM))
