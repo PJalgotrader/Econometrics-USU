@@ -22,26 +22,26 @@ table(df$month_sold)
 str(df)
 
 # does this make any sense? 
-reg <- lm(Sold_Price ~ DOM + Quadrant, df)
+reg <- lm(DOM ~ Sold_Price + Quadrant, df)
 stargazer(reg, type="text") 
 
 # does this make any sense? 
-reg <- lm(Sold_Price ~ DOM + School_District, df)
+reg <- lm(DOM ~ Sold_Price + School_District, df)
 stargazer(reg, type="text") 
 
 # does this make any sense? 
-reg <- lm(Sold_Price ~ DOM + month_sold, df)
+reg <- lm(DOM ~ Sold_Price + month_sold, df)
 stargazer(reg, type="text") 
 
 # what should we do?
-reg <- lm(Sold_Price ~ DOM + factor(month_sold), df)
+reg <- lm(DOM ~ Sold_Price + factor(month_sold), df)
 stargazer(reg, type="text") 
 
 
 
 
 # now let's try a model with all the dummies. 
-reg <- lm(Sold_Price ~ Total_SQ+ DOM + factor(Quadrant) + factor(School_District)+ factor(month_sold), df)
+reg <- lm(DOM ~ Total_SQ+ Sold_Price + factor(Quadrant) + factor(School_District)+ factor(month_sold), df)
 stargazer(reg, type="text") 
 
 #-------------------------------------------------------------------
@@ -80,5 +80,5 @@ str(df)
 
 
 
-reg <- lm(Sold_Price ~ factor(hasgarage)+Total_SQ+ DOM + factor(Quadrant) + factor(School_District)+ factor(month_sold), df)
+reg <- lm(DOM ~ factor(hasgarage)+Total_SQ+ Sold_Price + factor(Quadrant) + factor(School_District)+ factor(month_sold), df)
 stargazer(reg, type="text") 
