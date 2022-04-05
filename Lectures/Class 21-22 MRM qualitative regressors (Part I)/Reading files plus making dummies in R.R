@@ -1,5 +1,5 @@
 ############################## making dummy variables in R ###############
-#install.packages("fastDummies")
+# using factor function
 
 library(stargazer)
 
@@ -45,40 +45,46 @@ reg <- lm(DOM ~ Total_SQ+ Sold_Price + factor(Quadrant) + factor(School_District
 stargazer(reg, type="text") 
 
 #-------------------------------------------------------------------
-# How can I control for which variable to be base group?
+# How can I control for which variable to be base group? use level or relevel() function
+# http://www.cookbook-r.com/Manipulating_data/Changing_the_order_of_levels_of_a_factor/
 
-#install.packages("fastDummies")
-library(fastDummies)
-library(dplyr)
-# https://cran.r-project.org/web/packages/fastDummies/vignettes/making-dummy-variables.html
-
+df_dummy <- df
+str(df_dummy)
 
 
-str(df)
-# using dummy_cols() function to make dummy variables in R:
- 
-df<- df %>% dummy_cols() 
-head(df)
+df_dummy$Quadrant        <-  factor(df_dummy$Quadrant)
+df_dummy$School_District <-  factor(df_dummy$School_District)
+df_dummy$month_sold      <-  factor(df_dummy$month_sold)
 
-str(df)
+
+reg <- lm(DOM ~ Total_SQ+ Sold_Price + Quadrant + School_District + month_sold, df_dummy)
+stargazer(reg, type="text") 
 
 
 
-# Exercise? How can we fix the month sold?
-df$month_sold <- factor(df$month_sold)
-str(df)
+levels(df_dummy$Quadrant)
+df_dummy$Quadrant <- factor(df_dummy$Quadrant, levels = c("SW", "NE" ,"NW" ,"SE"))
 
-df<- df %>% dummy_cols() 
-head(df)
-str(df)
+levels(df_dummy$School_District)
+df_dummy$School_District <- factor(df_dummy$School_District, levels = c("Logan", "Cache"))
 
+
+levels(df_dummy$month_sold)
+df_dummy$month_sold <-  relevel(df_dummy$month_sold, ref = "12")
+
+reg_relevel <- lm(DOM ~ Total_SQ+ Sold_Price + Quadrant + School_District + month_sold, df_dummy)
+stargazer(reg, reg_relevel, type="text") 
+
+
+#-----------------------------------------------------------------
 # making garage vs no garage
 
-df <- mutate(df, hasgarage = ifelse(Garage_Capacity==0, 0,1))
-head(df)
-str(df)
+df_dummy <- mutate(df_dummy, hasgarage = ifelse(Garage_Capacity==0, 0,1))
+head(df_dummy)
+str(df_dummy)
 
-
-
-reg <- lm(DOM ~ factor(hasgarage)+Total_SQ+ Sold_Price + factor(Quadrant) + factor(School_District)+ factor(month_sold), df)
+reg <- lm(DOM ~ hasgarage + Total_SQ+ Sold_Price + Quadrant + School_District + month_sold, df_dummy)
 stargazer(reg, type="text") 
+
+
+
