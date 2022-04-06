@@ -70,7 +70,7 @@ df_dummy$School_District <- factor(df_dummy$School_District, levels = c("Logan",
 
 
 levels(df_dummy$month_sold)
-df_dummy$month_sold <-  relevel(df_dummy$month_sold, ref = "12")
+df_dummy$month_sold <-  relevel(df_dummy$month_sold, ref = "6")
 
 reg_relevel <- lm(DOM ~ Total_SQ+ Sold_Price + Quadrant + School_District + month_sold, df_dummy)
 stargazer(reg, reg_relevel, type="text") 
@@ -78,12 +78,12 @@ stargazer(reg, reg_relevel, type="text")
 
 #-----------------------------------------------------------------
 # making garage vs no garage
-
+library(dplyr)
 df_dummy <- mutate(df_dummy, hasgarage = ifelse(Garage_Capacity==0, 0,1))
 head(df_dummy)
 str(df_dummy)
 
-reg <- lm(DOM ~ hasgarage + Total_SQ+ Sold_Price + Quadrant + School_District + month_sold, df_dummy)
+reg <- lm(DOM ~ factor(hasgarage) + Total_SQ+ Sold_Price + Quadrant + School_District + month_sold, df_dummy)
 stargazer(reg, type="text") 
 
 
