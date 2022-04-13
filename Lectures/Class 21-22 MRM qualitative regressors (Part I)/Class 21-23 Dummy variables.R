@@ -125,7 +125,7 @@ prop.table(Confusion_Matrix,margin=1)
 
 ########################
 
-# for HW11 question 6: How to define a binary variable ecobuy
+# for HW11 question 2: How to define a binary variable ecobuy
 
 
 head(apple)
