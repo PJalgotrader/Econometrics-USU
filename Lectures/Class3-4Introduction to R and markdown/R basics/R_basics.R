@@ -108,7 +108,7 @@ Z<- matrix(1:4,2,2)
 solve(Z) # inverse matrix
 Z %*% solve(Z)
 
-# how to create identity matrix? google it
+# how to create identity matrix? Google it
 
 #---------------------------------------------------------------------------------------
 # 7 Factors
@@ -278,7 +278,7 @@ names(wage2)
 select(wage2, contains("educ"))
 head(select(wage2, starts_with("E"))) # what if I put a negative sign before start_with ?
 head(select(wage2, ends_with("c")))
-# you want even more power in terms of selecting columns? google grep() function Rdocumentation!
+# you want even more power in terms of selecting columns? Google grep() function Rdocumentation!
 
 
 
@@ -372,10 +372,6 @@ my_list[[3]]
 my_list[[3]][1,2]
 
 
-## exploring the vtable package
-# install.packages("vtable")
-library(vtable)
-#vtable::
 
 # built-in interactive Rstudio tutorial :https://www.rstudio.com/blog/rstudio-1-3-integrated-tutorials/  
 
