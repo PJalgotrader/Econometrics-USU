@@ -13,9 +13,7 @@ output: word_document
 
 ```{r include=FALSE}
 library(wooldridge)
-library(stargazer)
 library(dplyr)
-library(lmtest)
 ```
 
 
@@ -42,9 +40,7 @@ Replicate the following matrix in R and call it A.
 
 ```{r, comment=NA}
 
-A<- matrix(20:39, ncol = 5, nrow = 4, byrow = TRUE)
 
-A
 
 ```
 
