@@ -14,7 +14,7 @@ is.integer(x)
 
 #---------------------------------------------------------------------------------------
 # 2- double
-y<- 2.5
+y <- 2.5
 is.double(y)
 
 #---------------------------------------------------------------------------------------
@@ -32,9 +32,9 @@ x2 <- F # F or False
 
 ## logicals
 # > < == != !(not) /(or) &  isTrue(x)
-x<- 4!=5
+x <- 4 != 5
 isTRUE(x)
-y<- !(4<5)
+y <- !(4 < 5)
 y
 isTRUE(y)
 
@@ -43,38 +43,38 @@ isTRUE(y)
 
 #---------------------------------------------------------------------------------------
 # 5 vector: note that vector has 1 type, not a combination
-c(1,2,3) # combine function
-seq(1,5) # sequence function (like 1:5)
-seq(1,10,2)
-seq(1,10,length.out = 100) #100 pieces btw 1:10
-x<- c("a",2,3)
-seq(1,9, along.with =x ) # make 1:10 into number of x pieces
+c(1, 2, 3) # combine function
+seq(1, 5) # sequence function (like 1:5)
+seq(1, 10, 2)
+seq(1, 10, length.out = 100) #100 pieces btw 1:10
+x <- c("a", 2, 3)
+seq(1, 9, along.with = x) # make 1:10 into number of x pieces
 
 #replicating
-rep(1,3)
-rep("pedram",2)
-rep(c(1,0),times=5)
-rep(c(1,0),each=5)
+rep(1, 3)
+rep("pedram", 2)
+rep(c(1, 0), times = 5)
+rep(c(1, 0), each = 5)
 
 
 # brackets[]
-x<- c(10,20,30,40,50)
+x <- c(10, 20, 30, 40, 50)
 x[2]
 x[-3] # negative sign means do not include
 x[1:3]
-x[c(1,3)]
-x[c(-2,-4,-5)]
+x[c(1, 3)]
+x[c(-2, -4, -5)]
 x[-1:-2]
 x[-2:-1]
 x[20]
 
 # vector arithmetic
-a<- 1:3
-b<- c(2,1,5)
-a+b
-a>b
-a/b
-a*b
+a <- 1:3
+b <- c(2, 1, 5)
+a + b
+a > b
+a / b
+a * b
 
 
 
