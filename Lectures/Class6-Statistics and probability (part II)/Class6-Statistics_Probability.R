@@ -92,7 +92,7 @@ qnorm(0.975) # critical value for two tailed test when alpha=0.05
 
 
 #---------------------------------------------------------------------------------------------------------------#
-## Attention: Note the the d+distribution in R, does NOT return the probability (because the probability is 0)
+## Attention: Note the d is the density in R, does NOT return the probability (because the probability is 0)
 # it simply returns the density at that point. 
 
 dnorm(0) # this is equal to the normal density function at point 0. 
