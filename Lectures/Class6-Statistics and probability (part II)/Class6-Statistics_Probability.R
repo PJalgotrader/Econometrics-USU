@@ -101,7 +101,7 @@ f_normal <- function(x,mu=0,sigma=1) { (1/(sigma*sqrt(2*pi)) * exp(-0.5*((x-mu)/
 f_normal(0)
 
 curve(dnorm,-5,5)
-integrate(dnorm,-Inf,0)
+integrate(f_normal,-Inf,0)
 
 pnorm(0)
 
