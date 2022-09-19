@@ -41,7 +41,7 @@ abline(h=0,col="red",lwd=3)
 # just for fun
 par(mfrow=c(1,3)) # seeing  plots in one graph!
 x <- seq(1,10,0.5)
-y=x^2 + x^3
+y=x^2 
 plot(x      ,y     ,   type='l', col='black', lwd=3)
 plot(x      ,log(y),   type='l', col='red', lwd=3)
 plot(log(x) ,log(y),   type='l', col='blue', lwd=3)
