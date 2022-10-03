@@ -28,17 +28,15 @@ stargazer(SRM,MRM, type = "text")
 ###
 
 
-plot(df$inc, df$cons)
-
 reg_base <- lm(cons~inc , df)
 stargazer(reg_base, type = 'text')
-abline(reg_base, col="red")
 
 reg_quad <- lm(cons~ inc + I(inc^2), df)
-stargazer(reg_base, reg_quad,  type = 'text', digits = 7)
-lines(df$inc, predict(reg_quad), col='blue')
+stargazer(reg_base, reg_quad,  type = 'text')
+# how can you rescale this?
+
+
 
 reg_log <- lm(log(cons)~ log(inc), df)
 stargazer(reg_base, reg_quad, reg_log,  type = 'text', digits = 7)
-.
 
