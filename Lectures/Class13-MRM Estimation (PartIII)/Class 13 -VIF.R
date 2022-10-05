@@ -1,6 +1,6 @@
 # Porf. Pedram Jahangiry
 
-# VIF: test for existance of multicollinearity
+# VIF: test for existence of multicollinearity
 
 # Automatic calculation of VIF 
 # install.packages("car")
