@@ -25,7 +25,7 @@ cor(hprice2$rooms, hprice2$rooms^2) # wow, look at that! the correlation is 99%
 
 # let's see if model 2 is telling us any contradicting story with respect to rooms and log(dist)?
 plot(effect("rooms", reg2)) 
-# everything looks fine here. it seems that all the data is to the right of min point
+# everything looks fine here. it seems that all the data is to the right side of min point
 
 plot(effect("log(dist)", reg2))
 # hmmm, we don't like the story for log(dist). because it suggest price is increasing in dist untile dist <4 
@@ -39,7 +39,7 @@ stargazer(reg1,reg2,reg3, type = "text")
 vif(reg3)
 
 
-#  Multicolinearity is bad only if if inflate your 
+#  Multicolinearity is bad only if it inflates your 
 # standard errors so much that the coefficients become insignificant. But as you see in this example, 
 # that's not always the case 
 
