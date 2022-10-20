@@ -87,7 +87,7 @@ reg_new2   <- lm(lwage~ I(2*univ+jc)+univ+exper, df)
 summary(reg_new1)
 summary(reg_new2)
 
-stargazer(reg, reg_new, reg_new1, reg_new2, type="text")
+stargazer(reg, reg_new1, reg_new2, type="text")
 
 
 #------------------------------------------------------------------------------------
