@@ -1,3 +1,5 @@
+# Prof Pedram Jahangiry
+
 library(wooldridge)
 library(stargazer)
 library(dplyr)
