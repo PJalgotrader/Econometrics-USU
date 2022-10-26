@@ -17,10 +17,10 @@ beta_exper = 0.07  # and it is unique
 
 # let's change the sample size
 
-MRM_10  <- lm(wage~educ+exper,wage1[sample.int(526)[1:10],] )
-MRM_30  <- lm(wage~educ+exper,wage1[sample.int(526)[1:30],] )
-MRM_100 <- lm(wage~educ+exper,wage1[sample.int(526)[1:100],])
-MRM_500 <- lm(wage~educ+exper,wage1[sample.int(526)[1:500],])
+MRM_10  <- lm(wage~educ+exper,wage1[sample(1:526,10),] )
+MRM_30  <- lm(wage~educ+exper,wage1[sample(1:526,30),] )
+MRM_100 <- lm(wage~educ+exper,wage1[sample(1:526,100),])
+MRM_500 <- lm(wage~educ+exper,wage1[sample(1:526,500),])
 
 stargazer(MRM_10,MRM_30,MRM_100,MRM_500,MRM, type="text")
 
