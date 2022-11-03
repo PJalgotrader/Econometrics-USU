@@ -69,13 +69,13 @@ plot(effect("rooms", MRM))
 # Using interactions 
 MRM <-lm(stndfnl~ atndrte+ priGPA + ACT 
          + I(priGPA^2) + I(ACT^2)
-         + atndrte:priGPA + atndrte:ACT
+         + atndrte:priGPA 
          , data=attend)
 
 stargazer(MRM, type = "text")
 
 # testing H0: (b1 + 2.59 b6) = 0
-linearHypothesis(MRM, c("atndrte+ 2.59 * atndrte:priGPA + 22.51 * atndrte:ACT "))
+linearHypothesis(MRM, c("atndrte+ 2.59 * atndrte:priGPA"))
 
 
 ##############################################################################
@@ -87,7 +87,7 @@ stargazer(MRM, type = "text", digits = 4)
 
 
 # Define sets of regressor variables
-xvalues <- data.frame(sat=c(1200, 1000), hsperc=c(30,50), hsize=c(5,10))
+xvalues <- data.frame(sat=c(1200, 1000, 900), hsperc=c(30,50, 40), hsize=c(5,10,15))
 
 # Point estimates and 95% prediction intervals for these
 predict(MRM, newdata =   xvalues, interval = "prediction", level = 0.95)
