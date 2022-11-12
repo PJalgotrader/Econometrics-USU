@@ -56,6 +56,8 @@ df_dummy$Quadrant        <-  factor(df_dummy$Quadrant)
 df_dummy$School_District <-  factor(df_dummy$School_District)
 df_dummy$month_sold      <-  factor(df_dummy$month_sold)
 
+str(df_dummy)
+
 
 reg <- lm(DOM ~ Total_SQ+ Sold_Price + Quadrant + School_District + month_sold, df_dummy)
 stargazer(reg, type="text") 
