@@ -61,7 +61,7 @@ linearHypothesis(MRM_dummy_UR, matchCoefs(MRM_dummy_UR, "female")) # reject the 
 
 
 #case2: If the slope differences are zero. 
-linearHypothesis(MRM_dummy_UR, c("female:sat=0" , "female:hsperc=0", "female:tothrs=0"))             # fail to reject the null, so a better model is the one that allows for intercept difference only. 
+linearHypothesis(MRM_dummy_UR, c("female:sat=0" , "female:hsperc=0", "female:tothrs=0"))   # fail to reject the null, so a better model is the one that allows for intercept difference only. 
 
 
 MRM_dummy_R <- lm(cumgpa ~ female + sat +  hsperc +  tothrs , gpa3, subset= (spring==1)) # the example in the book only applies to the subset of Spring semester.
@@ -98,6 +98,8 @@ mroz$inlf[1:6]
 
 # or alternatively
 Confusion_Matrix <- table(mroz$inlf, predict(MRM_dummy_dep) > 0.5)
+Confusion_Matrix
+
 prop.table(Confusion_Matrix,margin=1)
 
 (overall_correct_predictions <- (203+350) / (203+350+122+78))
