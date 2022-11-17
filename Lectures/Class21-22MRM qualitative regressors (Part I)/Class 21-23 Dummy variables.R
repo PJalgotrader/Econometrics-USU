@@ -61,7 +61,7 @@ linearHypothesis(MRM_dummy_UR, matchCoefs(MRM_dummy_UR, "female")) # reject the 
 
 
 #case2: If the slope differences are zero. 
-linearHypothesis(MRM_dummy_UR, c("female:sat=0" , "female:hsperc=0", "female:tothrs=0"))   # fail to reject the null, so a better model is the one that allows for intercept difference only. 
+linearHypothesis(MRM_dummy_UR, c("female:sat=0" , "female:hsperc=0", "female:tothrs=0"))             # fail to reject the null, so a better model is the one that allows for intercept difference only. 
 
 
 MRM_dummy_R <- lm(cumgpa ~ female + sat +  hsperc +  tothrs , gpa3, subset= (spring==1)) # the example in the book only applies to the subset of Spring semester.
@@ -87,22 +87,25 @@ plot(effect("exper",MRM_dummy_dep))
 predict(MRM_dummy_dep)[1:6]
 mroz$inlf[1:6]
 
+y_hat <- ifelse(predict(MRM_dummy_dep) > 0.5, 1, 0)
 
-(Percent_correctly_predicted_1       <- sum(predict(MRM_dummy_dep) > 0.5 & mroz$inlf==1) / sum(mroz$inlf==1))
-(Percent_correctly_predicted_0       <- sum(predict(MRM_dummy_dep) < 0.5 & mroz$inlf==0) / sum(mroz$inlf==0))
-(Percent_correctly_predicted_overall <- (sum(predict(MRM_dummy_dep) > 0.5 & mroz$inlf==1) + sum(predict(MRM_dummy_dep) < 0.5 & mroz$inlf==0)) / length(mroz$inlf)) 
-
-
-
+(Percent_correctly_predicted_1       <- sum(y_hat ==1 & mroz$inlf==1) / sum(mroz$inlf==1))
+(Percent_correctly_predicted_0       <- sum(y_hat ==0 & mroz$inlf==0) / sum(mroz$inlf==0))
+(Percent_correctly_predicted_overall <- (sum(y_hat ==1 & mroz$inlf==1) + sum(y_hat ==0 & mroz$inlf==0)) / length(mroz$inlf)) 
 
 
-# or alternatively
-Confusion_Matrix <- table(mroz$inlf, predict(MRM_dummy_dep) > 0.5)
-Confusion_Matrix
 
-prop.table(Confusion_Matrix,margin=1)
 
-(overall_correct_predictions <- (203+350) / (203+350+122+78))
+
+# or alternatively (machine learning language)
+
+y = mroz$inlf
+y_hat <- ifelse(predict(MRM_dummy_dep) > 0.5, 1, 0)
+
+Confusion_Matrix <- table(y, y_hat)
+prop.table(Confusion_Matrix,margin=1) # this gives you the recalls 
+
+(accuracy                    <- (203+350) / (203+350+122+78))
 
 
 
@@ -127,7 +130,7 @@ prop.table(Confusion_Matrix,margin=1)
 
 ########################
 
-# for HW11 question 2: How to define a binary variable ecobuy
+# for HW11 question 6: How to define a binary variable ecobuy
 
 
 head(apple)
