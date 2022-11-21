@@ -36,7 +36,7 @@ bptest(MRM_log)
 u_hat <- resid(MRM)
 summary(lm( u_hat^2     ~ lotsize+sqrft+bdrms, data=hprice1))
 
-Qu_hat_log <- resid(MRM_log)
+u_hat_log <- resid(MRM_log)
 summary(lm( u_hat_log^2 ~ log(lotsize)+log(sqrft)+bdrms, data=hprice1))
 
 
